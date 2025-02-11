@@ -158,3 +158,100 @@ body {
     transform: translateX(0);
   }
 }
+
+/* Alert Messages (Top Right Corner) */
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  min-width: 250px;
+  max-width: 300px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateX(120%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+.alert.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.alert.success {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.95), rgba(56, 142, 60, 0.95));
+  border: 2px solid #4caf50;
+  color: white;
+}
+
+.alert.error {
+  background: linear-gradient(135deg, rgba(244, 67, 54, 0.95), rgba(211, 47, 47, 0.95));
+  border: 2px solid #f44336;
+  color: white;
+}
+
+.alert.warning {
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.95), rgba(245, 124, 0, 0.95));
+  border: 2px solid #ff9800;
+  color: white;
+}
+
+/* Close Button (Optional) */
+.alert .close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  float: right;
+  margin-left: 10px;
+  transition: color 0.2s ease-in-out;
+}
+
+.alert .close-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hover Effects */
+.alert:hover {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Animation for Alerts */
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.alert.show {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.alert.hide {
+  animation: slideOut 0.5s ease-in-out forwards;
+}
