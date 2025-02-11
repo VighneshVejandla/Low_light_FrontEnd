@@ -1,0 +1,160 @@
+/* Global Styling */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* File Input */
+.file-input {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 50px;
+}
+
+.file-input:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.file-input::file-selector-button {
+  background: #ff9800;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.file-input::file-selector-button:hover {
+  background: #e68900;
+}
+
+/* Buttons */
+.upload-btn,
+.download-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-btn {
+  background: linear-gradient(135deg, #ff9800, #ff6f00);
+  color: #fff;
+}
+
+.upload-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 152, 0, 0.4);
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: #fff;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+}
+
+/* Images Wrapper - Side by Side Layout */
+.images-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+/* Preview & Enhanced Containers */
+.preview-container,
+.enhanced-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  flex: 1 1 300px;
+  max-width: 400px;
+  animation: slideIn 1s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.preview-container:hover,
+.enhanced-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Image Preview */
+.image-preview {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
